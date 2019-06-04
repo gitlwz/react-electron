@@ -1,31 +1,53 @@
 {
-  "name": "react-electron",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "name": "react-electron",
+    "version": "0.1.0",
+    "private": true,
+    "main": "./public/electron.js",
+    "homepage": "./",
+    "dependencies": {},
+    "devDependencies": {
+        "electron": "^5.0.2",
+        "electron-builder": "^20.41.0",
+        "electron-debug": "^3.0.0",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6",
+        "react-scripts": "3.0.1"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "electron-dev": "electron . development",
+        "eject": "react-scripts eject",
+        "packager2": "npm run build && rm -rf dist && electron-builder",
+        "packager": "electron-builder"
+    },
+    "build": {
+        "productName": "mock",
+        "appId": "com.example.yourapp",
+        "directories": {
+            "output": "dist"
+        },
+        "files": [
+            "!**/inspector/*"
+        ],
+        "win": {
+            "icon": "build/icons/icon.ico"
+        }
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
 }
