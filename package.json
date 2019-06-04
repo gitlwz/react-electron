@@ -28,9 +28,7 @@
         "directories": {
             "output": "dist"
         },
-        "files": [
-            "!**/inspector/*"
-        ],
+        "files": [],
         "win": {
             "icon": "build/icons/icon.ico"
         }
