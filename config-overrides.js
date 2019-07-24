@@ -8,12 +8,17 @@ module.exports = override(
     fixBabelImports('import', {
         libraryName: 'antd',
         libraryDirectory: 'es',
-        style: "css",
+        style: true
     }),
     addWebpackAlias({
         ["@"]: path.resolve(__dirname, "src")
     }),
     addLessLoader({
         javascriptEnabled: true,
+        modifyVars: {
+            "@layout-header-height": "44px",
+            "@body-background":"#f0f2f5",
+            "@layout-header-padding": "0 14px;"
+        },
     })
 );

@@ -17,8 +17,8 @@ let mainWindow, startUrl;
 // 如果是生产环境，则url为build/index.html
 let devEnv = process.argv[2];
 if (devEnv === 'development') {   //开发环境
-    startUrl = 'http://localhost:3000';
-    // require('electron-debug')({ showDevTools: true })
+    startUrl = 'http://localhost:3000/#/page';
+    require('electron-debug')({ showDevTools: true })
 } else {
     startUrl = url.format({
         pathname: path.join(__dirname, './index.html'),

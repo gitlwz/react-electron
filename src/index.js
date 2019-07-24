@@ -1,12 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import dva from 'dva';
+import createLoading from 'dva-loading';
+import logger from 'redux-logger';
+const app = dva(
+    process.env.NODE_ENV === "development" ? {
+        onAction: logger,
+    } : {}
+);
+app.use(createLoading());
+app.router(require('./router').default);
 
-ReactDOM.render(<App />, document.getElementById('root'));
+app.start("#root");
+export default app._store;
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
