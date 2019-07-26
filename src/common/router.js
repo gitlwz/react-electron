@@ -43,16 +43,24 @@ const dynamicWrapper = (app, models, component) => {
 
 export const getRouterData = app => ([
     {
-        path: "/page",
+        path: "/black/page2",
+        component: dynamicWrapper(app, [], () => import("../routes/Page2.js")),
+    },
+    {
+        path: "/",
         component: dynamicWrapper(app, [], () => import("../layouts/BasicLayout.js")),
         routes: [
             {
-                path: "/page/page2",
+                path: "/page2",
                 component: dynamicWrapper(app, [], () => import("../routes/Page2.js")),
             },
             {
-                path: "/page/page1",
+                path: "/page1",
                 component: dynamicWrapper(app, [], () => import("../routes/Page1.js"))
+            },
+            {
+                path: "/page3",
+                component: dynamicWrapper(app, [], () => import("../routes/Page3.js"))
             }
         ]
     }

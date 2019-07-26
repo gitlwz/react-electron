@@ -4,7 +4,7 @@ const electron = require('electron');
 const app = electron.app;
 // 浏览器窗口.
 const BrowserWindow = electron.BrowserWindow;
-
+const Menu = electron.Menu
 const path = require('path');
 const url = require('url');
 
@@ -17,7 +17,7 @@ let mainWindow, startUrl;
 // 如果是生产环境，则url为build/index.html
 let devEnv = process.argv[2];
 if (devEnv === 'development') {   //开发环境
-    startUrl = 'http://localhost:3000/#/page';
+    startUrl = 'http://localhost:3001/#/page/page1';
     require('electron-debug')({ showDevTools: true })
 } else {
     startUrl = url.format({
@@ -28,11 +28,10 @@ if (devEnv === 'development') {   //开发环境
 }
 
 function createWindow() {
+    Menu.setApplicationMenu(null)
     // 创建一个浏览器窗口.
     mainWindow = new BrowserWindow({
-        width: 800, height: 600, webPreferences: {
-            webSecurity: false, // 这样可以在 webview 中加载/显示本地计算机的图片。
-        }
+        width: 800, height: 600,
     });
 
 

@@ -1,20 +1,19 @@
 
 const menuDate = [
     {
-        name: 'dashboard',
+        name: 'page2',
         icon: "dashboard",
-        path: "/page",
-        children: [
-            {
-                name: '模态框-例子1',
-                path: '/page/page2',
-            }
-        ],
+        path: "/page2"
     },
     {
-        name: 'dashboard',
+        name: 'page1',
         icon: "dashboard",
-        path: "/page/page1"
+        path: "/page1"
+    },
+    {
+        name: 'page3',
+        icon: "dashboard",
+        path: "/page3"
     }
 ]
 
