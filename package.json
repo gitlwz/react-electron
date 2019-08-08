@@ -44,9 +44,7 @@
             "output": "dist"
         },
         "files": [],
-        "win": {
-            "icon": "build/icons/icon.ico"
-        }
+        "win": {}
     },
     "eslintConfig": {
         "extends": "react-app"
